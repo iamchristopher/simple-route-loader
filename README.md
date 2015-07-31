@@ -1,6 +1,11 @@
 # Simple Route Loader
 A simple module to autoload ExpressJS routers.
 
+## Installation
+```js
+npm i simple-route-loader
+```
+
 ## Example
 Simply `require` the module and pass in your Express app.
 
