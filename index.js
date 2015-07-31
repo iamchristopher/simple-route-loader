@@ -1,3 +1,3 @@
 'use strict';
 
-exports = require('./lib/simple-route-loader');
+module.exports = require('./lib/simple-route-loader');
