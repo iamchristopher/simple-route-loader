@@ -4,14 +4,14 @@ A simple module to autoload ExpressJS routers.
 ## Example
 Simply `require` the module and pass in your Express app.
 
-```
+```js
 require('simple-route-loader')(app);
 ```
 
 ## Configuration
 The module accepts a configuration object as an optional second parameter.
 
-```
+```js
 require('simple-route-loader')(app, {
     folder: __dirname
 });
