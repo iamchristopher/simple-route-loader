@@ -25,3 +25,6 @@ __folder__
 __file__
 - Change the name of files to load;
 - Defaults to the _router.js_.
+
+____
+_Told you it's simple._
