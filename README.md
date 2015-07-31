@@ -18,12 +18,12 @@ require('simple-route-loader')(app, {
 ```
 
 ### Options
-__folder__
-- Change the folder to look for routers;
+__folder__ &mdash; Change the folder to look for routers
+- Can be a String or an Array. If a string is passed, it is cast to an array;
 - Defaults to the current working directory.
 
-__file__
-- Change the name of files to load;
+__file__ &mdash; Change the name of files to load
+- Can be a String or an Array. If a string is passed, it is cast to an array;
 - Defaults to the _router.js_.
 
 ____
