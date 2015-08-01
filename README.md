@@ -7,10 +7,23 @@ npm i simple-route-loader
 ```
 
 ## Example
-Simply `require` the module and pass in your Express app.
+
+Simply `require` the module and pass in your Express app..
 
 ```js
 require('simple-route-loader')(app);
+```
+and create a router..
+```js
+'use strict';
+
+var router = module.exports = require('express').Router();
+
+router.route('/')
+    .get(function (req, res) {
+        res.send('Look, ma!');
+    });
+
 ```
 
 ## Configuration
