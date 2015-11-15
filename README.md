@@ -31,7 +31,7 @@ The module accepts a configuration object as an optional second parameter.
 
 ```js
 require('simple-route-loader')(app, {
-    folder: __dirname
+    dir: __dirname
 });
 ```
 
