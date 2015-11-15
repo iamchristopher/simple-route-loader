@@ -7,9 +7,9 @@ var path     = require('path'),
     execFile = require('child_process').execFile;
 
 // Privates
-var _options ={
-    files: [ 'router.js' ],
-    folders: [ process.cwd() ],
+var _options = {
+    file: 'router.js',
+    dir: process.cwd(),
     preserveTree: true
 };
 
@@ -17,7 +17,15 @@ module.exports = function (app, options) {
     extend(_options, options);
     _options.app = app;
 
-    execFile('find', _options.folders, execHandler);
+    if (!(_options.dir instanceof Array)) {
+        _options.dir = [ _options.dir ];
+    }
+
+    if (!(_options.file instanceof Array)) {
+        _options.file = [ _options.file ];
+    }
+
+    execFile('find', _options.dir, execHandler);
 };
 
 function execHandler (err, stdout, stderr) {
@@ -38,7 +46,7 @@ function formatFilePath (p) {
         directory = path.dirname(p);
 
     if (_options.preserveTree) {
-        _options.folders.forEach(function (dir) {
+        _options.dir.forEach(function (dir) {
             if (directory.indexOf(dir) >= 0) {
                 i.dir = directory.replace(dir, '');
             }
@@ -53,7 +61,7 @@ function verifyFile (f) {
         name      = path.basename(f);
 
     if (stat.isDirectory()) return false;
-    if (_options.files.indexOf(name) === -1) return false;
+    if (_options.file.indexOf(name) === -1) return false;
 
     return true;
 }
