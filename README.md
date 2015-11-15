@@ -3,7 +3,7 @@ A simple module to autoload ExpressJS routers.
 
 ## Installation
 ```js
-npm i simple-route-loader
+npm i simple-route-loader --save
 ```
 
 ## Example
@@ -31,12 +31,12 @@ The module accepts a configuration object as an optional second parameter.
 
 ```js
 require('simple-route-loader')(app, {
-    folder: __dirname
+    dir: __dirname
 });
 ```
 
 ### Options
-__folder__ &mdash; Change the folder to look for routers
+__dir__ &mdash; Change the folder to look for routers
 - Can be a String or an Array. If a String is passed, it is cast to an Array;
 - Defaults to the current working directory.
 
@@ -44,7 +44,7 @@ __file__ &mdash; Change the name of files to load
 - Can be a String or an Array. If a String is passed, it is cast to an Array;
 - Defaults to the _router.js_.
 
-__preserve_tree__ &mdash; Use the actual file path of the router
+__preserveTree__ &mdash; Use the actual file path of the router
 - Can be a Boolean or a String. If a String is passed, it is cast to a Boolean;
 - Defaults to _true_.
 
